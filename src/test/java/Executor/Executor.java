@@ -14,22 +14,24 @@ import pageobjects.*;
 public class Executor {
 
 	private WebDriver driver;
+	decolar decolar = new decolar(driver);
+
 
 	@Before
 	public void CriarDriver() {
 		Driver wdriver = new Driver();
 		driver = wdriver.Webdriver();
 	}
+
 	@Test
 	public void Pesquisar() throws IOException, InterruptedException {
 
 		for (int i = 1; i < 10; i++) {
-			decolar decolar = new decolar(driver);
 
 			// decolar.ordenarValores();
 			decolar.pesquisarPacotes();
 			decolar.proximaPagina();
-			
+
 			decolar.gravarDados();
 
 			System.err.println("Pagina: " + i);

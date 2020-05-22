@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -20,11 +22,6 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
-
-import javax.swing.plaf.BorderUIResource.TitledBorderUIResource;
 
 public class decolar {
 
@@ -160,7 +157,6 @@ public class decolar {
 
 	public void gravarDados() throws IOException {
 
-
 		File localPlanilha = new File("tools/resultado_da_pesquisa.xlsx");
 
 		FileInputStream planilhaExistente = new FileInputStream(localPlanilha);
@@ -169,8 +165,9 @@ public class decolar {
 
 		List<WebElement> resultados = TitulosHoteis;
 		int resultado = resultados.size();
+		System.out.println("resultado :" + resultado);
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i <= resultado-1; i++) {
 			Row row = sheetExistente.getRow(2 + i);
 			if (row == null)
 				sheetExistente.createRow(2 + i);
