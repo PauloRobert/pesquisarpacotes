@@ -32,7 +32,7 @@ public class Driver {
 
 		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.get("https://tinyurl.com/decolar28");
+		driver.get("https://www.decolar.com/pacotes/");
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
