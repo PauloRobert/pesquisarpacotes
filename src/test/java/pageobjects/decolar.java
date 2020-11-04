@@ -34,16 +34,16 @@ public class decolar {
 	@FindBy(how = How.CSS, using = "i.tooltip-close.eva-3-icon-close.-eva-3-m-sm")
 	private WebElement TooltipResumoViagem;
 
-	@FindBy(how = How.CSS, using = "a.upatracker.-eva-3-tc-gray-0.-eva-3-bold")
+	@FindBy(how = How.CSS, using = "div.name-wrapper")
 	private List<WebElement> TitulosHoteis;
 
-	@FindBy(how = How.CSS, using = "li.-lg.hf-pricebox-price.hf-robot-price.-final-price-v5")
+	@FindBy(how = How.CSS, using = "span.main-value")
 	private List<WebElement> PrecoPessoa;
 
-	@FindBy(how = How.CSS, using = "li.pkg-final-price span.-eva-3-bold")
+	@FindBy(how = How.CSS, using = "p.eva-3-p.-eva-3-bold.-eva-3-mt-sm span")
 	private List<WebElement> ValorTotal;
 
-	@FindBy(how = How.CLASS_NAME, using = "flight-text")
+	@FindBy(how = How.CLASS_NAME, using = "flight-info-container")
 	private List<WebElement> InfoVoo;
 
 	@FindBy(how = How.ID, using = "iata-origin")
@@ -95,52 +95,39 @@ public class decolar {
 
 	public void pesquisarPacotes() throws IOException, InterruptedException {
 
-//		if (TooltipResumoViagem.isDisplayed() == true) {
-//			System.out.println(TooltipResumoViagem.getText());
-//			TooltipResumoViagem.click();
-//		} else {
-//			System.out.println("O tooltip não apareceu\n");
+	
+		Thread.sleep(10000);
+		
+		System.out.println(TitulosHoteis.get(0));
+
+//		List<WebElement> resultados = TitulosHoteis;
+//		System.out.println("Pacotes encontrados: \n" + resultados.size());
+//
+//		File arquivo = new File("tools/resultado_da_pesquisa.txt");
+//
+//		FileWriter fw = new FileWriter(arquivo.getAbsoluteFile(), true);
+//		BufferedWriter bw = new BufferedWriter(fw);
+//		// Começa a escrever no arquivo
+//		// bw.write("###################### " + dataFormato.format(now) +
+//		// " \n");
+//
+//		for (int i = 0; i < resultados.size(); i++) {
+//
+//			System.out.println(resultados.get(i).getText() + ";" + ValorTotal.get(i).getText().substring(18) + ";"
+//					+ InfoVoo.get(i).getText() + ";" + aeroportoOrigem.get(i).getText() + ";"
+//					+ aeroportoDestino.get(i).getText() + ";" + enderecoCompleto.get(i).getText() + ";"
+//					+ notaHotel.getText());
+//
+//			// Pula uma linha
+//			bw.write(resultados.get(i).getText() + ";" + ValorTotal.get(i).getText().substring(18) + ";"
+//					+ InfoVoo.get(i).getText() + ";" + aeroportoOrigem.get(i).getText() + ";"
+//					+ aeroportoDestino.get(i).getText() + ";" + enderecoCompleto.get(i).getText() + ";"
+//					+ notaHotel.getText());
+//			// Pula uma linha
+//			bw.write("\n");
+//
 //		}
-		
-		Thread.sleep(3000);
-		InputOrigem.clear();
-		Thread.sleep(3000);
-		InputOrigem.sendKeys("São Paulo, São Paulo, Brasil", Keys.TAB);
-		Thread.sleep(3000);
-		
-		InputDestino.sendKeys("Gramado, Rio Grande do Sul, Brasil");
-		
-		
-		
-
-		List<WebElement> resultados = TitulosHoteis;
-		System.out.println("Pacotes encontrados: \n" + resultados.size());
-
-		File arquivo = new File("tools/resultado_da_pesquisa.txt");
-
-		FileWriter fw = new FileWriter(arquivo.getAbsoluteFile(), true);
-		BufferedWriter bw = new BufferedWriter(fw);
-		// Começa a escrever no arquivo
-		// bw.write("###################### " + dataFormato.format(now) +
-		// " \n");
-
-		for (int i = 0; i < resultados.size(); i++) {
-
-			System.out.println(resultados.get(i).getText() + ";" + ValorTotal.get(i).getText().substring(18) + ";"
-					+ InfoVoo.get(i).getText() + ";" + aeroportoOrigem.get(i).getText() + ";"
-					+ aeroportoDestino.get(i).getText() + ";" + enderecoCompleto.get(i).getText() + ";"
-					+ notaHotel.getText());
-
-			// Pula uma linha
-			bw.write(resultados.get(i).getText() + ";" + ValorTotal.get(i).getText().substring(18) + ";"
-					+ InfoVoo.get(i).getText() + ";" + aeroportoOrigem.get(i).getText() + ";"
-					+ aeroportoDestino.get(i).getText() + ";" + enderecoCompleto.get(i).getText() + ";"
-					+ notaHotel.getText());
-			// Pula uma linha
-			bw.write("\n");
-
-		}
-		bw.close();
+//		bw.close();
 
 	}
 

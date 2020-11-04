@@ -24,16 +24,12 @@ public class Executor {
 	@Test
 	public void Pesquisar() throws IOException, InterruptedException {
 
-		for (int i = 1; i < 10; i++) {
-
+		
 			// decolar.ordenarValores();
 			decolar.pesquisarPacotes();
-			decolar.proximaPagina();
+			//decolar.proximaPagina();
 
-			System.err.println("Pagina: " + i);
-
-		}
-
+		
 	}
 
 	@After
