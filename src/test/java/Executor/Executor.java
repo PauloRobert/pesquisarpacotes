@@ -30,8 +30,6 @@ public class Executor {
 			decolar.pesquisarPacotes();
 			decolar.proximaPagina();
 
-			decolar.gravarDados();
-
 			System.err.println("Pagina: " + i);
 
 		}
