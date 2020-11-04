@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -74,6 +75,13 @@ public class decolar {
 
 	@FindBy(how = How.CSS, using = "div.hf-cluster.eva-3-cluster-gallery.pkgf-featured-container.analytics.ha-itemResult.hf-robot-cluster.-cluster-gallery-md")
 	private List<WebElement> linkOferta;
+	
+	
+	@FindBy(how = How.CSS, using = "input.input-tag.sbox-main-focus.sbox-origin.sbox-primary.sbox-places-first.sbox-origin-container.places-inline")
+	private WebElement InputOrigem;
+	
+	@FindBy(how = How.CSS, using = "input.input-tag.sbox-main-focus.sbox-destination.sbox-secondary.sbox-places-second.places-inline")
+	private WebElement InputDestino;
 
 	// Criando o construtor do Driver
 	// Criamos o construtor com o mesmo nome da classe
@@ -93,6 +101,17 @@ public class decolar {
 //		} else {
 //			System.out.println("O tooltip não apareceu\n");
 //		}
+		
+		Thread.sleep(3000);
+		InputOrigem.clear();
+		Thread.sleep(3000);
+		InputOrigem.sendKeys("São Paulo, São Paulo, Brasil", Keys.TAB);
+		Thread.sleep(3000);
+		
+		InputDestino.sendKeys("Gramado, Rio Grande do Sul, Brasil");
+		
+		
+		
 
 		List<WebElement> resultados = TitulosHoteis;
 		System.out.println("Pacotes encontrados: \n" + resultados.size());

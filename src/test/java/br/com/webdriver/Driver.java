@@ -30,7 +30,7 @@ public class Driver {
 		options.addArguments("--disable-browser-side-navigation");
 		options.addArguments("--disable-gpu");
 
-		WebDriver driver = new ChromeDriver(options);
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.decolar.com/pacotes/");
 		driver.manage().deleteAllCookies();
