@@ -2,20 +2,18 @@ package Executor;
 
 import java.io.IOException;
 
-import javax.swing.JOptionPane;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import br.com.webdriver.Driver;
-import pageobjects.*;
+import pageobjects.decolar;
 
 public class Executor {
 
 	private WebDriver driver;
 	decolar decolar = new decolar(driver);
-
 
 	@Before
 	public void CriarDriver() {

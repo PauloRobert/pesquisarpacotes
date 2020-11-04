@@ -155,41 +155,41 @@ public class decolar {
 
 	}
 
-	public void gravarDados() throws IOException {
-
-		File localPlanilha = new File("tools/resultado_da_pesquisa.xlsx");
-
-		FileInputStream planilhaExistente = new FileInputStream(localPlanilha);
-		XSSFWorkbook plan = new XSSFWorkbook(planilhaExistente);
-		XSSFSheet sheetExistente = plan.getSheetAt(0);
-
-		List<WebElement> resultados = TitulosHoteis;
-		int resultado = resultados.size();
-		System.out.println("resultado :" + resultado);
-
-		for (int i = 0; i <= resultado-1; i++) {
-			Row row = sheetExistente.getRow(2 + i);
-			if (row == null)
-				sheetExistente.createRow(2 + i);
-			sheetExistente.getRow(2 + i).createCell(5).setCellValue(TitulosHoteis.get(i).getText());
-			// Gravando dados
-
-			sheetExistente.getRow(2 + i).createCell(6).setCellValue(notaHotel.getText());
-
-			sheetExistente.getRow(2 + i).createCell(7)
-					.setCellValue(PrecoPessoa.get(i).getText().substring(3).replace("\n", ""));
-			// sheetExistente.getRow(2 +
-			// i).createCell(8).setCellFormula(sheetExistente.getcw);
-
-			sheetExistente.getRow(2 + i).createCell(9).setCellValue(aeroportoOrigem.get(i).getText()
-					.replace("GRU", "GUARULHOS").replace("CGH", "CONGONHAS").replace("VCP", "VIRACOPOS"));
-
-			sheetExistente.getRow(2 + i).createCell(10)
-					.setCellValue(aeroportoDestino.get(i).getText().replace("MCO", "ORLANDO"));
-		}
-		FileOutputStream fechandoArquivo = new FileOutputStream(localPlanilha);
-		plan.write(fechandoArquivo);
-
-	}
+//	public void gravarDados() throws IOException {
+//
+//		File localPlanilha = new File("tools/resultado_da_pesquisa.xlsx");
+//
+//		FileInputStream planilhaExistente = new FileInputStream(localPlanilha);
+//		XSSFWorkbook plan = new XSSFWorkbook(planilhaExistente);
+//		XSSFSheet sheetExistente = plan.getSheetAt(0);
+//
+//		List<WebElement> resultados = TitulosHoteis;
+//		int resultado = resultados.size();
+//		System.out.println("resultado :" + resultado);
+//
+//		for (int i = 0; i <= resultado-1; i++) {
+//			Row row = sheetExistente.getRow(2 + i);
+//			if (row == null)
+//				sheetExistente.createRow(2 + i);
+//			sheetExistente.getRow(2 + i).createCell(5).setCellValue(TitulosHoteis.get(i).getText());
+//			// Gravando dados
+//
+//			sheetExistente.getRow(2 + i).createCell(6).setCellValue(notaHotel.getText());
+//
+//			sheetExistente.getRow(2 + i).createCell(7)
+//					.setCellValue(PrecoPessoa.get(i).getText().substring(3).replace("\n", ""));
+//			// sheetExistente.getRow(2 +
+//			// i).createCell(8).setCellFormula(sheetExistente.getcw);
+//
+//			sheetExistente.getRow(2 + i).createCell(9).setCellValue(aeroportoOrigem.get(i).getText()
+//					.replace("GRU", "GUARULHOS").replace("CGH", "CONGONHAS").replace("VCP", "VIRACOPOS"));
+//
+//			sheetExistente.getRow(2 + i).createCell(10)
+//					.setCellValue(aeroportoDestino.get(i).getText().replace("MCO", "ORLANDO"));
+//		}
+//		FileOutputStream fechandoArquivo = new FileOutputStream(localPlanilha);
+//		plan.write(fechandoArquivo);
+//
+//	}
 
 }
